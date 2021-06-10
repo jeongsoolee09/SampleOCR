@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "84R4G5Qa009tBXypkM35d6mItaN9sSzHqkuzpE6OaOzLz4+/jGV6Th2KtqkegW5q7Ojt936G3Nihv6T6SmfeyQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jslee\\source\\repos\\SampleOCR\\SampleOCR\\SampleOCR.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jslee\\.nuget\\packages\\fsharp.core\\5.0.1\\fsharp.core.5.0.1.nupkg.sha512",
+    "C:\\Users\\jslee\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
+    "C:\\Users\\jslee\\.nuget\\packages\\tesseract\\4.1.1\\tesseract.4.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}
