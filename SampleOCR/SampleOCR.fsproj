@@ -12,6 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="readUma.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Include="Program.fs" />
   </ItemGroup>
 
