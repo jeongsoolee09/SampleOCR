@@ -1,7 +1,15 @@
 module ReadUma
 
+open System.Text
+
 (* Here, unlike in ReadSingleNumber,
     we would like to read consecutive characters off a single image. *)
+
+
+let toUTF8 (source: string) : string =
+    let utf8 = UTF8Encoding () in
+    let byteArray = utf8.GetBytes source in
+    utf8.GetString byteArray
 
 
 let readSingleLineJPN (path: string) : unit =
@@ -10,6 +18,7 @@ let readSingleLineJPN (path: string) : unit =
     |> Tesseract.Pix.LoadFromFile
     |> (fun img -> engine.Process (img, Tesseract.PageSegMode.SingleLine))
     |> (fun result -> result.GetText ())
+    |> toUTF8
     |> printfn "OCR result: %s"
 
 
@@ -19,3 +28,4 @@ let readAllPortionsFromScreenShot () =
                                  ; "resources/img/up-title-1.png" // Umamusume info title bar 1
                                  ; "resources/img/up-title-2.png" // Umamusume info title bar 2
                                 ]
+
