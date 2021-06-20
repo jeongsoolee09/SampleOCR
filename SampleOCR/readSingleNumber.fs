@@ -1,11 +1,13 @@
 module ReadSingleNumber
 
+open Tesseract
+
 
 let readSingleNumber (path: string) : unit =
-    let engine = new Tesseract.TesseractEngine ("tessdata-4.1.0", "eng") in
+    let engine = new TesseractEngine ("tessdata-4.1.0", "eng") in
     path
-    |> Tesseract.Pix.LoadFromFile
-    |> (fun img -> engine.Process (img, Tesseract.PageSegMode.SingleChar))
+    |> Pix.LoadFromFile
+    |> (fun img -> engine.Process (img, PageSegMode.SingleChar))
     |> (fun result -> result.GetText ())
     |> printfn "OCR result: %s"
 
