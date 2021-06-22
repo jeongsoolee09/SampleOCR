@@ -30,8 +30,7 @@ let binarizeTest (src: IplImage): unit =
   let carPro = seq { for threshType in threshTypes do
                        for threshVal in threshVals ->
                          (threshType, threshVal) }
-                         |> Seq.toList  // enumeration of all possible combinations
-  List.iter (fun (threshType, threshVals) ->
+  Seq.iter (fun (threshType, threshVals) ->
       let binarizeResult = binarize src threshType threshVals in
       ignore <| binarizeResult.SaveImage "hello.jpg") // discard the return code
       carPro
