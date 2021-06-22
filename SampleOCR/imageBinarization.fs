@@ -19,7 +19,8 @@ let freeImg (img: IplImage) : unit =
   if not <| isNull img then Cv.ReleaseImage img
 
 
-let binarizeTest (src: IplImage): unit =
+let binarizeTest (imgDir: string): unit =
+  let imgDirIpl = new IplImage (imgDir, LoadMode.Color)
   let threshTypes = [ ThresholdType.Binary
                     ; ThresholdType.BinaryInv
                     ; ThresholdType.Otsu
@@ -31,6 +32,6 @@ let binarizeTest (src: IplImage): unit =
                        for threshVal in threshVals ->
                          (threshType, threshVal) }
   Seq.iter (fun (threshType, threshVals) ->
-      let binarizeResult = binarize src threshType threshVals in
+      let binarizeResult = binarize imgDirIpl threshType threshVals in
       ignore <| binarizeResult.SaveImage "hello.jpg") // discard the return code
       carPro
